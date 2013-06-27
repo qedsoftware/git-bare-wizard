@@ -19,7 +19,7 @@ def main(argv):
     prompts_flag = True
     directory_name = "project.git"
     project_description = "project"
-    email_addresses = ["willywutang@gmail.com"]
+    email_addresses = ["foo@bar.baz"]
         
     # command-line argument parsing
     try:
