@@ -19,7 +19,7 @@ def main(argv):
     prompts_flag = True
     directory_name = "project.git"
     project_description = "project"
-    email_addresses = ["foo@bar.baz"]
+    email_addresses = ["foobar@baz.com"]
         
     # command-line argument parsing
     try:
@@ -49,7 +49,9 @@ def main(argv):
     os.system("git config hooks.emailprefix \"[git] \"")
     os.system("echo '(%s) ' > description" % project_description )
     os.chdir("hooks")
-    os.system("sed -e \"s/#\. //g\" post-receive.sample > post-receive")
+    os.system("sed -e \"s/#\. /. /g\" post-receive.sample > post-receive")
+    os.system("chmod 775 post-receive")
+
 
 # invoke main
 if __name__ == "__main__":
